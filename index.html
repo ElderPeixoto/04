@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date com o Elder</title>
+    <!-- Favicon de Coração -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Fundo vermelho com corações decorativos */
+        body {
+            background-color: #dc2626;
+            background-image: radial-gradient(#ef4444 2px, transparent 2px), radial-gradient(#ef4444 2px, #dc2626 2px);
+            background-size: 80px 80px;
+            background-position: 0 0, 40px 40px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Corações flutuantes sutis */
+        .heart-bg {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.15);
+            font-size: 2rem;
+            pointer-events: none;
+            user-select: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 relative">
+
+    <!-- Corações de fundo -->
+    <div class="heart-bg top-5 left-5 text-4xl">💖</div>
+    <div class="heart-bg top-12 right-8 text-5xl">💕</div>
+    <div class="heart-bg bottom-10 left-10 text-6xl">❤️</div>
+    <div class="heart-bg bottom-1/3 right-6 text-3xl">💗</div>
+    <div class="heart-bg top-1/2 left-4 text-4xl">✨</div>
+
+    <div class="max-w-md w-full bg-white/95 backdrop-blur-sm p-6 md:p-8 rounded-3xl shadow-2xl border border-red-200 text-center space-y-6 my-6 z-10">
+        
+        <!-- ================= PÁGINA 1 ================= -->
+        <div id="step-1" class="space-y-6">
+            
+            <!-- Conteúdo inicial da Página 1 -->
+            <div id="conteudo-inicial-step1" class="space-y-6">
+                <h1 class="text-2xl md:text-3xl font-extrabold text-red-600 leading-tight">
+                    Oi Manu! Prepare-se para o seu date amanhã com o Elder! 🌹✨
+                </h1>
+
+                <!-- Resumo sobre a Ataxia -->
+                <div class="bg-red-50 border border-red-200 text-gray-800 p-4 rounded-2xl text-left text-sm space-y-3 shadow-inner">
+                    <p class="font-semibold text-red-700 text-base flex items-center gap-1">
+                        <span>💬</span> Uma breve introdução sobre mim:
+                    </p>
+                    <p>
+                        Eu tenho uma condição chamada Ataxia (mais especificamente Ataxia Espinocerebelar do tipo 1 ou SCA1), que afeta um pouco a minha mobilidade física. Na prática? Pode ser que eu precise do seu ombro em alguns momentos... 😉
+                    </p>
+                    <p>
+                        Ah, e se você pesquisar por aí, a SCA1 parece super genérica ou assustadora, mas a minha é muito diferente do que se encontra na internet. Por isso, é bem melhor me conhecer ao vivo para tirar a prova!
+                    </p>
+                </div>
+
+                <!-- Pauta do Encontro -->
+                <div class="bg-pink-50 border border-pink-200 p-4 rounded-2xl text-left text-sm space-y-3 shadow-sm">
+                    <p class="font-bold text-red-700 text-base text-center">
+                        📋 Pauta do Encontro
+                    </p>
+                    <ul class="space-y-2.5 text-gray-700">
+                        <li class="flex items-start gap-2">
+                            <span class="text-base">📚</span>
+                            <span><strong>1. Literatura e Recomendações:</strong> Qual foi o último livro que mexeu de verdade com você e qual clube de hobbies você me indicaria de olhos fechados?</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Pergunta da Página 1 -->
+                <div class="space-y-3 pt-2">
+                    <p class="text-gray-800 font-bold text-base">
+                        E aí, vamos sair? ✨
+                    </p>
+
+                    <div class="space-y-3">
+                        <button onclick="responderStep1('Sim')" 
+                                class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3.5 px-4 rounded-2xl shadow-lg transition-all text-base flex items-center justify-center gap-2">
+                            <span>✨</span> <span>Sim</span>
+                        </button>
+                        <button onclick="responderStep1('Não')" 
+                                class="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-3 px-4 rounded-2xl transition-all flex items-center justify-center gap-2">
+                            <span>😢</span> <span>Não</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tela de Resposta da Página 1 -->
+            <div id="resultado-step1" class="hidden space-y-6 py-2">
+                <div id="msg-resposta-step1"></div>
+                
+                <!-- Botoes para caso responda SIM -->
+                <div id="botoes-sucesso-step1" class="pt-2 border-t border-red-100 flex gap-3">
+                    <button onclick="voltarParaStep1()" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-3.5 px-4 rounded-2xl shadow-md transition-all flex items-center justify-center gap-2 text-base">
+                        <span>⬅️ Voltar</span>
+                    </button>
+                    <button onclick="irParaStep2()" class="flex-1 bg-red-600 hover:bg-red-700 text-white font-bold py-3.5 px-4 rounded-2xl shadow-xl transition-all flex items-center justify-center gap-2 text-base">
+                        <span>Próximo ➡️</span>
+                    </button>
+                </div>
+
+                <!-- Resumo se ela responder NÃO -->
+                <div id="resumo-recusa-step1" class="hidden space-y-6">
+                    <div class="bg-gray-50 border border-gray-200 p-5 rounded-2xl text-left text-sm space-y-3 shadow-sm text-gray-800">
+                        <p class="font-bold text-gray-700 text-base border-b border-gray-200 pb-2">
+                            Você respondeu:
+                        </p>
+                        <p class="font-medium text-gray-700">❌ Não confirmou presença para o date.</p>
+                    </div>
+
+                    <div class="pt-2 flex gap-3">
+                        <button onclick="voltarParaStep1()" class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-600 font-semibold py-3 px-3 rounded-xl transition-all text-xs sm:text-sm flex items-center justify-center gap-1">
+                            🔄 Mudar ideia
+                        </button>
+                        <button onclick="irParaFinalizacao('Não')" class="flex-1 bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-3 rounded-xl shadow-lg transition-all text-xs sm:text-sm flex items-center justify-center gap-1">
+                            ✅ Concluir
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ================= PÁGINA 2 ================= -->
+        <div id="step-2" class="space-y-6 hidden">
+            
+            <!-- Mensagem de Resposta da Página 2 -->
+            <div id="msg-resposta-step2" class="hidden"></div>
+
+            <!-- Bloco da Dívida Histórica + Botões -->
+            <div id="pergunta-step2" class="space-y-6">
+                <div class="bg-pink-50 border border-pink-200 p-4 rounded-2xl text-left text-sm space-y-3 shadow-sm">
+                    <p class="font-bold text-red-700 text-base text-center">
+                        🗳️ Dívida Histórica
+                    </p>
+                    <p class="text-gray-700 text-sm leading-relaxed text-center">
+                        Você vai me dar o beijo que prometeu no 2º turno das eleições de 2026 pós-vitória do Lula ou vai pedir prorrogação? 💋😏
+                    </p>
+                </div>
+
+                <div class="space-y-3">
+                    <button onclick="responderStep2('Sim')" 
+                            class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3.5 px-4 rounded-2xl shadow-lg transition-all text-base flex items-center justify-center gap-2">
+                        <!-- Ícone SVG de lábios em branco para alto contraste no mobile -->
+                        <svg class="w-5 h-5 fill-current text-white" viewBox="0 0 24 24">
+                            <path d="M12 11c-2.5 0-4.5 1-6 2.5 1.5 2 4 3.5 6 3.5s4.5-1.5 6-3.5c-1.5-1.5-3.5-2.5-6-2.5zm0-7c4.42 0 8 1.79 8 4 0 .5-.31.97-.84 1.38C17.43 7.85 14.89 7 12 7s-5.43.85-7.16 2.38C4.31 10.97 4 10.5 4 10c0-2.21 3.58-4 8-4zm0 15c-3.87 0-7.22-1.32-9.17-3.27C3.39 14.8 5.3 13 8.35 12.09c1.07.56 2.38.91 3.65.91s2.58-.35 3.65-.91c3.05.91 4.96 2.71 5.52 3.64-1.95 1.95-5.3 3.27-9.17 3.27z"/>
+                        </svg>
+                        <span>Beijar</span>
+                    </button>
+                    <button onclick="responderStep2('Não')" 
+                            class="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-3 px-4 rounded-2xl transition-all flex items-center justify-center gap-2">
+                        <span>⏳</span> <span>Prorrogar</span>
+                    </button>
+                </div>
+
+                <!-- Botão de voltar na página 2 -->
+                <div class="pt-2">
+                    <button onclick="voltarParaStep1DoStep2()" class="w-full bg-gray-100 hover:bg-gray-200 text-gray-600 font-semibold py-2.5 px-4 rounded-xl transition-all text-sm">
+                        ⬅️ Voltar à página anterior
+                    </button>
+                </div>
+            </div>
+
+            <!-- Resumo Final -->
+            <div id="resumo-final" class="space-y-6 hidden pt-2">
+                <h2 class="text-2xl font-extrabold text-red-600">
+                    Resumo do Nosso Date! 📝✨
+                </h2>
+
+                <!-- Bloco 1: Status das Respostas -->
+                <div class="bg-red-50 border border-red-200 p-5 rounded-2xl text-left text-sm space-y-3 shadow-sm text-gray-800">
+                    <p class="font-bold text-red-700 text-base border-b border-red-200 pb-2">
+                        Você respondeu:
+                    </p>
+                    <p id="resumo-presenca" class="font-medium"></p>
+                    <p id="resumo-beijo" class="font-medium"></p>
+                </div>
+
+                <!-- Bloco 2: Pauta do Encontro -->
+                <div class="bg-pink-50 border border-pink-200 p-5 rounded-2xl text-left text-sm space-y-3 shadow-sm text-gray-800">
+                    <p class="font-bold text-red-700 text-base border-b border-pink-200 pb-2">
+                        📚 Pauta do Encontro:
+                    </p>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>📖 <strong>Literatura e Recomendações:</strong> Livros e clubes de hobbies.</li>
+                        <li>☕ <strong>Boas conversas:</strong> Nos conhecermos ao vivo sem pressa!</li>
+                    </ul>
+                </div>
+
+                <!-- Mensagem Final -->
+                <p class="text-red-600 font-extrabold text-lg py-1">
+                    Mal posso esperar por amanhã! 💖
+                </p>
+
+                <!-- Botões de Voltar, Refazer e Concluir -->
+                <div class="pt-2 flex gap-2">
+                    <button onclick="voltarParaPerguntaStep2()" class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-600 font-semibold py-3 px-2 rounded-xl transition-all text-xs flex items-center justify-center gap-1">
+                        ⬅️ Voltar
+                    </button>
+                    <button onclick="reiniciarFluxo()" class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-600 font-semibold py-3 px-2 rounded-xl transition-all text-xs flex items-center justify-center gap-1">
+                        🔄 Refazer
+                    </button>
+                    <button onclick="irParaFinalizacao('Sim')" class="flex-1 bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-2 rounded-xl shadow-lg transition-all text-xs flex items-center justify-center gap-1">
+                        ✅ Concluir
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ================= PÁGINA FINAL (NÃO - ATÉ MAIS) ================= -->
+        <div id="step-final-nao" class="space-y-6 hidden py-8 text-center">
+            <div class="text-6xl mb-2">👋</div>
+            <h2 class="text-3xl font-extrabold text-red-600">
+                Até mais!
+            </h2>
+            <p class="text-gray-600 text-sm font-medium">
+                Resposta enviada com sucesso. ✨
+            </p>
+            <div class="pt-4">
+                <button onclick="reiniciarFluxo()" class="bg-gray-100 hover:bg-gray-200 text-gray-600 font-semibold py-2.5 px-5 rounded-xl transition-all text-sm">
+                    🔄 Recomeçar
+                </button>
+            </div>
+        </div>
+
+        <!-- ================= PÁGINA FINAL (SIM - ATÉ AMANHÃ) ================= -->
+        <div id="step-final-sim" class="space-y-6 hidden py-8 text-center">
+            <div class="text-6xl mb-2">💌</div>
+            <h2 class="text-3xl font-extrabold text-red-600">
+                Até amanhã!
+            </h2>
+            <p class="text-gray-600 text-sm">
+                As suas escolhas já foram registradas com sucesso. ✨
+            </p>
+            <div class="pt-4">
+                <button onclick="reiniciarFluxo()" class="bg-gray-100 hover:bg-gray-200 text-gray-600 font-semibold py-2.5 px-5 rounded-xl transition-all text-sm">
+                    🔄 Recomeçar
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const SHEETDB_URL = "https://sheetdb.io/api/v1/9a6o7jdu4czl9";
+
+        let respostaPresenca = "";
+        let respostaBeijo = "";
+
+        function enviarParaGoogleSheets(tipo, resposta) {
+            const agora = new Date();
+            const dataHoraFormatada = agora.toLocaleString('pt-BR');
+
+            const dados = {
+                data: [
+                    {
+                        DataHora: dataHoraFormatada,
+                        Resposta: tipo + ": " + resposta
+                    }
+                ]
+            };
+
+            fetch(SHEETDB_URL, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dados)
+            })
+            .then(response => response.json())
+            .then(data => console.log("Gravado no Sheets com sucesso:", data))
+            .catch(error => console.error("Erro ao gravar:", error));
+        }
+
+        function responderStep1(resposta) {
+            respostaPresenca = resposta;
+            enviarParaGoogleSheets("Presença Date", resposta);
+
+            document.getElementById('conteudo-inicial-step1').classList.add('hidden');
+
+            const containerMsg = document.getElementById('msg-resposta-step1');
+            const botoesSucesso = document.getElementById('botoes-sucesso-step1');
+            const resumoRecusa = document.getElementById('resumo-recusa-step1');
+
+            if (resposta === 'Sim') {
+                containerMsg.innerHTML = `
+                    <div class="bg-red-100 border border-red-300 text-red-800 p-6 rounded-2xl font-bold text-base leading-relaxed shadow-sm">
+                        Perfeito! Passo pra te pegar às 20 horas! ✨
+                    </div>
+                `;
+                botoesSucesso.classList.remove('hidden');
+                resumoRecusa.classList.add('hidden');
+            } else {
+                containerMsg.innerHTML = `
+                    <div class="bg-gray-100 border border-gray-300 text-gray-700 p-6 rounded-2xl font-bold text-base leading-relaxed shadow-sm">
+                        Respeito sua opinião, mas é uma opinião burra! 😅
+                    </div>
+                `;
+                botoesSucesso.classList.add('hidden');
+                resumoRecusa.classList.remove('hidden');
+            }
+
+            document.getElementById('resultado-step1').classList.remove('hidden');
+        }
+
+        function voltarParaStep1() {
+            document.getElementById('resultado-step1').classList.add('hidden');
+            document.getElementById('conteudo-inicial-step1').classList.remove('hidden');
+        }
+
+        function irParaStep2() {
+            document.getElementById('step-1').classList.add('hidden');
+            document.getElementById('step-2').classList.remove('hidden');
+        }
+
+        function voltarParaStep1DoStep2() {
+            document.getElementById('step-2').classList.add('hidden');
+            document.getElementById('step-1').classList.remove('hidden');
+            voltarParaStep1();
+        }
+
+        function responderStep2(resposta) {
+            respostaBeijo = resposta;
+            enviarParaGoogleSheets("Beijo Prometido", resposta);
+
+            document.getElementById('pergunta-step2').classList.add('hidden');
+
+            const containerMsg = document.getElementById('msg-resposta-step2');
+            if (resposta === 'Sim') {
+                containerMsg.innerHTML = `
+                    <div class="bg-red-100 border border-red-300 text-red-800 p-4 rounded-2xl font-bold text-sm leading-relaxed">
+                        💖 Pode deixar que eu vou cobrar esse beijo pessoalmente! 😉
+                    </div>
+                `;
+            } else {
+                containerMsg.innerHTML = `
+                    <div class="bg-gray-100 border border-gray-300 text-gray-700 p-4 rounded-2xl font-bold text-sm leading-relaxed">
+                        Tudo bem.. o importante é se conhecer! 😊
+                    </div>
+                `;
+            }
+            containerMsg.classList.remove('hidden');
+
+            const txtPresenca = respostaPresenca === 'Sim' ? '✅ Confirmou presença (Encontro às 20h)' : '❌ Não confirmou presença';
+            const txtBeijo = respostaBeijo === 'Sim' ? '💋 Beijar (Vou cobrar o beijo!)' : '⏳ Prorrogar (Adiar o beijo)';
+
+            document.getElementById('resumo-presenca').innerText = txtPresenca;
+            document.getElementById('resumo-beijo').innerText = txtBeijo;
+
+            document.getElementById('resumo-final').classList.remove('hidden');
+        }
+
+        function voltarParaPerguntaStep2() {
+            document.getElementById('resumo-final').classList.add('hidden');
+            document.getElementById('msg-resposta-step2').classList.add('hidden');
+            document.getElementById('pergunta-step2').classList.remove('hidden');
+        }
+
+        function irParaFinalizacao(tipo) {
+            document.getElementById('step-1').classList.add('hidden');
+            document.getElementById('step-2').classList.add('hidden');
+            
+            if (tipo === 'Sim') {
+                document.getElementById('step-final-sim').classList.remove('hidden');
+            } else {
+                document.getElementById('step-final-nao').classList.remove('hidden');
+            }
+        }
+
+        function reiniciarFluxo() {
+            document.getElementById('step-final-sim').classList.add('hidden');
+            document.getElementById('step-final-nao').classList.add('hidden');
+            document.getElementById('step-2').classList.add('hidden');
+            document.getElementById('resumo-final').classList.add('hidden');
+            document.getElementById('msg-resposta-step2').classList.add('hidden');
+            document.getElementById('pergunta-step2').classList.remove('hidden');
+            document.getElementById('step-1').classList.remove('hidden');
+            voltarParaStep1();
+        }
+    </script>
+</body>
+</html>

@@ -1,392 +1,455 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Date com o Elder</title>
-    <!-- Favicon de Coração -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Fundo vermelho com corações decorativos */
-        body {
-            background-color: #dc2626;
-            background-image: radial-gradient(#ef4444 2px, transparent 2px), radial-gradient(#ef4444 2px, #dc2626 2px);
-            background-size: 80px 80px;
-            background-position: 0 0, 40px 40px;
-            position: relative;
-            overflow-x: hidden;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convite Especial para Kaanda ❤️</title>
+  
+  <!-- Favicon Emoji ❤️ -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Fontes Google (Poppins / Playfair Display) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        /* Corações flutuantes sutis */
-        .heart-bg {
-            position: absolute;
-            color: rgba(255, 255, 255, 0.15);
-            font-size: 2rem;
-            pointer-events: none;
-            user-select: none;
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+          colors: {
+            romantic: {
+              red: '#8b0000',
+              deepRed: '#5c0000',
+              pink: '#ffb6c1',
+              softPink: '#fff0f3',
+              accent: '#ff4d6d'
+            }
+          }
         }
-    </style>
+      }
+    }
+  </script>
+
+  <style>
+    /* Background com gradiente romântico */
+    body {
+      background: linear-gradient(135deg, #7a0016 0%, #a81127 50%, #4a000d 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Animação de Corações Flutuantes */
+    .heart-bg {
+      position: fixed;
+      top: -10vh;
+      font-size: 1.5rem;
+      color: rgba(255, 182, 193, 0.35);
+      user-select: none;
+      pointer-events: none;
+      z-index: 0;
+      animation: float 8s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(115vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Card Glassmorphism estilo Romântico */
+    .card-glass {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Smooth Transitions */
+    .page-step {
+      transition: all 0.3s ease-in-out;
+    }
+  </style>
 </head>
-<body class="min-h-screen flex items-center justify-center p-4 relative">
+<body class="font-sans text-gray-800 flex items-center justify-center p-4 sm:p-6 min-h-screen">
 
-    <!-- Corações de fundo -->
-    <div class="heart-bg top-5 left-5 text-4xl">💖</div>
-    <div class="heart-bg top-12 right-8 text-5xl">💕</div>
-    <div class="heart-bg bottom-10 left-10 text-6xl">❤️</div>
-    <div class="heart-bg bottom-1/3 right-6 text-3xl">💗</div>
-    <div class="heart-bg top-1/2 left-4 text-4xl">✨</div>
+  <!-- Fundo Decorativo de Corações -->
+  <div id="hearts-container"></div>
 
-    <div class="max-w-md w-full bg-white/95 backdrop-blur-sm p-6 md:p-8 rounded-3xl shadow-2xl border border-red-200 text-center space-y-6 my-6 z-10">
+  <!-- Container Principal das Telas -->
+  <main class="w-full max-w-md relative z-10 my-auto">
+    
+    <!-- ==========================================
+         PÁGINA 1: O CONVITE INICIAL
+         ========================================== -->
+    <section id="page-1" class="page-step card-glass rounded-3xl p-6 sm:p-8 space-y-6 text-center border border-pink-200">
+      <header class="space-y-2">
+        <span class="text-4xl animate-bounce inline-block">💌</span>
+        <h1 class="text-2xl sm:text-3xl font-serif font-bold text-romantic-red">
+          Oi Kaanda! Você aceita um date com Elder?
+        </h1>
+      </header>
+
+      <!-- Bloco 1: Sobre Ataxia / SCA1 -->
+      <div class="bg-romantic-softPink rounded-2xl p-4 text-left border border-pink-100 space-y-2">
+        <div class="flex items-center gap-2 text-romantic-red font-semibold text-sm">
+          <span>💡</span>
+          <span>Um pequeno detalhe sobre mim:</span>
+        </div>
+        <p class="text-xs sm:text-sm text-gray-700 leading-relaxed">
+          Sendo bem transparente e de forma leve: eu tenho Ataxia Espinocerebelar do tipo 1 (SCA1). Na prática, afeta só um pouquinho minha mobilidade física (então posso precisar do seu ombro de vez em quando 😉). Mas te garanto que ao vivo é infinitamente melhor de me conhecer do que o que se lê na internet!
+        </p>
+      </div>
+
+      <!-- Bloco 2: A Proposta -->
+      <div class="bg-romantic-softPink rounded-2xl p-4 text-left border border-pink-100 space-y-2">
+        <div class="flex items-center gap-2 text-romantic-red font-semibold text-sm">
+          <span>🍝</span>
+          <span>Minha Proposta</span>
+        </div>
+        <p class="text-xs sm:text-sm text-gray-700 leading-relaxed">
+          Que tal irmos comer a famosa e deliciosa carbonara do 
+          <a href="https://www.instagram.com/asttoreforneria" target="_blank" rel="noopener noreferrer" class="font-semibold text-romantic-accent underline hover:text-romantic-red transition-colors">
+            @asttoreforneria
+          </a>? (Confesso que eu também nunca fui lá, então é uma excelente oportunidade para a gente descobrir e experimentar juntos! 😅)
+        </p>
+      </div>
+
+      <p class="font-serif text-lg font-semibold text-romantic-deepRed">
+        E aí, vamos sair? ✨
+      </p>
+
+      <!-- Botões de Ação -->
+      <div class="grid grid-cols-2 gap-3 pt-2">
+        <button onclick="responderConvite('Sim')" class="w-full py-3.5 px-4 bg-romantic-red hover:bg-romantic-deepRed text-white font-semibold rounded-2xl shadow-lg transition-all transform active:scale-95 flex items-center justify-center gap-1.5">
+          <span>Sim!</span> 💖
+        </button>
+        <button onclick="responderConvite('Não')" class="w-full py-3.5 px-4 bg-gray-100 hover:bg-gray-200 text-gray-600 font-medium rounded-2xl transition-all transform active:scale-95">
+          Não 😅
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         PÁGINA 1A: INTERMEDIÁRIA (SE SIM)
+         ========================================== -->
+    <section id="page-1a" class="page-step card-glass rounded-3xl p-6 sm:p-8 space-y-6 text-center border border-pink-200 hidden">
+      <header class="space-y-2">
+        <span class="text-4xl inline-block">🚗✨</span>
+        <h2 class="text-xl sm:text-2xl font-serif font-bold text-romantic-red">
+          Que excelente escolha!
+        </h2>
+      </header>
+
+      <p class="text-sm sm:text-base text-gray-700 leading-relaxed bg-romantic-softPink p-4 rounded-2xl border border-pink-100">
+        Perfeito! Passo pra te pegar às 20 horas e na volta te deixo em casa. Vamos e voltamos de Uber! 🚗✨
+      </p>
+
+      <div class="space-y-2 text-left">
+        <label for="input-endereco" class="block text-xs font-semibold text-gray-600 uppercase tracking-wider pl-1">
+          Onde devo te buscar?
+        </label>
+        <input 
+          type="text" 
+          id="input-endereco" 
+          placeholder="Digite seu endereço ou ponto de referência..."
+          class="w-full p-3.5 rounded-2xl border border-pink-300 focus:outline-none focus:ring-2 focus:ring-romantic-red focus:border-transparent text-sm bg-white shadow-inner"
+        />
+        <p id="erro-endereco" class="text-xs text-red-500 hidden pl-1">Por favor, informe o endereço para continuar.</p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3 pt-2">
+        <button onclick="navegarPara('page-1')" class="w-full py-3 px-4 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-2xl transition-all">
+          ⬅️ Voltar
+        </button>
+        <button onclick="salvarEnderecoEAvancar()" class="w-full py-3.5 px-4 bg-romantic-red hover:bg-romantic-deepRed text-white font-semibold rounded-2xl shadow-lg transition-all transform active:scale-95">
+          Próximo ➡️
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         PÁGINA 1B: INTERMEDIÁRIA (SE NÃO)
+         ========================================== -->
+    <section id="page-1b" class="page-step card-glass rounded-3xl p-6 sm:p-8 space-y-6 text-center border border-pink-200 hidden">
+      <header class="space-y-2">
+        <span class="text-4xl inline-block">🙈</span>
+        <h2 class="text-xl sm:text-2xl font-serif font-bold text-romantic-red">
+          Poxa... Tem certeza?
+        </h2>
+      </header>
+
+      <p class="text-base text-gray-700 leading-relaxed bg-romantic-softPink p-4 rounded-2xl border border-pink-100 font-medium">
+        Respeito sua opinião, mas é uma opinião burra! 😅
+      </p>
+
+      <div class="grid grid-cols-2 gap-3 pt-2">
+        <button onclick="navegarPara('page-1')" class="w-full py-3.5 px-3 bg-romantic-red hover:bg-romantic-deepRed text-white font-semibold rounded-2xl shadow-lg transition-all transform active:scale-95 text-xs sm:text-sm">
+          Mudar de ideia 🔄
+        </button>
+        <button onclick="concluirNao()" class="w-full py-3.5 px-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-2xl transition-all text-xs sm:text-sm">
+          Concluir ✅
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         PÁGINA 3: PAUTA E CONFIRMAÇÃO (APÓS O SIM)
+         ========================================== -->
+    <section id="page-3" class="page-step card-glass rounded-3xl p-6 sm:p-8 space-y-6 text-center border border-pink-200 hidden">
+      <header class="space-y-1">
+        <h2 class="text-2xl font-serif font-bold text-romantic-red">
+          Resumo do Nosso Date! 📝✨
+        </h2>
+        <p class="text-xs text-gray-500">Tudo pronto para o nosso encontro</p>
+      </header>
+
+      <!-- Bloco de Confirmação e Endereço -->
+      <div class="bg-romantic-softPink rounded-2xl p-4 text-left border border-pink-100 space-y-1">
+        <div class="flex items-center gap-2 text-romantic-red font-semibold text-xs uppercase tracking-wider">
+          <span>📍</span>
+          <span>Confirmação de Local</span>
+        </div>
+        <p class="text-xs text-gray-600"><strong>Busca:</strong> Às 20:00 (Uber ida e volta)</p>
+        <p class="text-xs text-gray-600"><strong>Endereço:</strong> <span id="resumo-endereco-texto" class="italic text-gray-800"></span></p>
+      </div>
+
+      <!-- Bloco de Pauta -->
+      <div class="space-y-3 text-left">
+        <p class="text-xs font-semibold text-gray-500 uppercase tracking-wider text-center">Pauta da Noite</p>
         
-        <!-- ================= PÁGINA 1 ================= -->
-        <div id="step-1" class="space-y-6">
-            
-            <!-- Conteúdo inicial da Página 1 -->
-            <div id="conteudo-inicial-step1" class="space-y-6">
-                <h1 class="text-2xl md:text-3xl font-extrabold text-red-600 leading-tight">
-                    Oi Manu! Prepare-se para o seu date amanhã com o Elder! 🌹✨
-                </h1>
-
-                <!-- Resumo sobre a Ataxia -->
-                <div class="bg-red-50 border border-red-200 text-gray-800 p-4 rounded-2xl text-left text-sm space-y-3 shadow-inner">
-                    <p class="font-semibold text-red-700 text-base flex items-center gap-1">
-                        <span>💬</span> Uma breve introdução sobre mim:
-                    </p>
-                    <p>
-                        Eu tenho uma condição chamada Ataxia (mais especificamente Ataxia Espinocerebelar do tipo 1 ou SCA1), que afeta um pouco a minha mobilidade física. Na prática? Pode ser que eu precise do seu ombro em alguns momentos... 😉
-                    </p>
-                    <p>
-                        Ah, e se você pesquisar por aí, a SCA1 parece super genérica ou assustadora, mas a minha é muito diferente do que se encontra na internet. Por isso, é bem melhor me conhecer ao vivo para tirar a prova!
-                    </p>
-                </div>
-
-                <!-- Pauta do Encontro -->
-                <div class="bg-pink-50 border border-pink-200 p-4 rounded-2xl text-left text-sm space-y-3 shadow-sm">
-                    <p class="font-bold text-red-700 text-base text-center">
-                        📋 Pauta do Encontro
-                    </p>
-                    <ul class="space-y-2.5 text-gray-700">
-                        <li class="flex items-start gap-2">
-                            <span class="text-base">📚</span>
-                            <span><strong>1. Literatura e Recomendações:</strong> Qual foi o último livro que mexeu de verdade com você e qual clube de hobbies você me indicaria de olhos fechados?</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Pergunta da Página 1 -->
-                <div class="space-y-3 pt-2">
-                    <p class="text-gray-800 font-bold text-base">
-                        E aí, vamos sair? ✨
-                    </p>
-
-                    <div class="space-y-3">
-                        <button onclick="responderStep1('Sim')" 
-                                class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3.5 px-4 rounded-2xl shadow-lg transition-all text-base flex items-center justify-center gap-2">
-                            <span>✨</span> <span>Sim</span>
-                        </button>
-                        <button onclick="responderStep1('Não')" 
-                                class="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-3 px-4 rounded-2xl transition-all flex items-center justify-center gap-2">
-                            <span>😢</span> <span>Não</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tela de Resposta da Página 1 -->
-            <div id="resultado-step1" class="hidden space-y-6 py-2">
-                <div id="msg-resposta-step1"></div>
-                
-                <!-- Botoes para caso responda SIM -->
-                <div id="botoes-sucesso-step1" class="pt-2 border-t border-red-100 flex gap-3">
-                    <button onclick="voltarParaStep1()" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-3.5 px-4 rounded-2xl shadow-md transition-all flex items-center justify-center gap-2 text-base">
-                        <span>⬅️ Voltar</span>
-                    </button>
-                    <button onclick="irParaStep2()" class="flex-1 bg-red-600 hover:bg-red-700 text-white font-bold py-3.5 px-4 rounded-2xl shadow-xl transition-all flex items-center justify-center gap-2 text-base">
-                        <span>Próximo ➡️</span>
-                    </button>
-                </div>
-
-                <!-- Resumo se ela responder NÃO -->
-                <div id="resumo-recusa-step1" class="hidden space-y-6">
-                    <div class="bg-gray-50 border border-gray-200 p-5 rounded-2xl text-left text-sm space-y-3 shadow-sm text-gray-800">
-                        <p class="font-bold text-gray-700 text-base border-b border-gray-200 pb-2">
-                            Você respondeu:
-                        </p>
-                        <p class="font-medium text-gray-700">❌ Não confirmou presença para o date.</p>
-                    </div>
-
-                    <div class="pt-2 flex gap-3">
-                        <button onclick="voltarParaStep1()" class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-600 font-semibold py-3 px-3 rounded-xl transition-all text-xs sm:text-sm flex items-center justify-center gap-1">
-                            🔄 Mudar ideia
-                        </button>
-                        <button onclick="irParaFinalizacao('Não')" class="flex-1 bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-3 rounded-xl shadow-lg transition-all text-xs sm:text-sm flex items-center justify-center gap-1">
-                            ✅ Concluir
-                        </button>
-                    </div>
-                </div>
-            </div>
-
+        <div class="bg-white p-3 rounded-2xl border border-pink-100 shadow-sm flex items-start gap-3">
+          <span class="text-xl">📚</span>
+          <div>
+            <h3 class="text-xs font-bold text-romantic-red">1. Literatura e Leituras</h3>
+            <p class="text-xs text-gray-600">Últimos livros e indicações incríveis.</p>
+          </div>
         </div>
 
-        <!-- ================= PÁGINA 2 ================= -->
-        <div id="step-2" class="space-y-6 hidden">
-            
-            <!-- Mensagem de Resposta da Página 2 -->
-            <div id="msg-resposta-step2" class="hidden"></div>
-
-            <!-- Bloco da Dívida Histórica + Botões -->
-            <div id="pergunta-step2" class="space-y-6">
-                <div class="bg-pink-50 border border-pink-200 p-4 rounded-2xl text-left text-sm space-y-3 shadow-sm">
-                    <p class="font-bold text-red-700 text-base text-center">
-                        🗳️ Dívida Histórica
-                    </p>
-                    <p class="text-gray-700 text-sm leading-relaxed text-center">
-                        Você vai me dar o beijo que prometeu no 2º turno das eleições de 2026 pós-vitória do Lula ou vai pedir prorrogação? 💋😏
-                    </p>
-                </div>
-
-                <div class="space-y-3">
-                    <button onclick="responderStep2('Sim')" 
-                            class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3.5 px-4 rounded-2xl shadow-lg transition-all text-base flex items-center justify-center gap-2">
-                        <!-- Ícone SVG de lábios em branco para alto contraste no mobile -->
-                        <svg class="w-5 h-5 fill-current text-white" viewBox="0 0 24 24">
-                            <path d="M12 11c-2.5 0-4.5 1-6 2.5 1.5 2 4 3.5 6 3.5s4.5-1.5 6-3.5c-1.5-1.5-3.5-2.5-6-2.5zm0-7c4.42 0 8 1.79 8 4 0 .5-.31.97-.84 1.38C17.43 7.85 14.89 7 12 7s-5.43.85-7.16 2.38C4.31 10.97 4 10.5 4 10c0-2.21 3.58-4 8-4zm0 15c-3.87 0-7.22-1.32-9.17-3.27C3.39 14.8 5.3 13 8.35 12.09c1.07.56 2.38.91 3.65.91s2.58-.35 3.65-.91c3.05.91 4.96 2.71 5.52 3.64-1.95 1.95-5.3 3.27-9.17 3.27z"/>
-                        </svg>
-                        <span>Beijar</span>
-                    </button>
-                    <button onclick="responderStep2('Não')" 
-                            class="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-3 px-4 rounded-2xl transition-all flex items-center justify-center gap-2">
-                        <span>⏳</span> <span>Prorrogar</span>
-                    </button>
-                </div>
-
-                <!-- Botão de voltar na página 2 -->
-                <div class="pt-2">
-                    <button onclick="voltarParaStep1DoStep2()" class="w-full bg-gray-100 hover:bg-gray-200 text-gray-600 font-semibold py-2.5 px-4 rounded-xl transition-all text-sm">
-                        ⬅️ Voltar à página anterior
-                    </button>
-                </div>
-            </div>
-
-            <!-- Resumo Final -->
-            <div id="resumo-final" class="space-y-6 hidden pt-2">
-                <h2 class="text-2xl font-extrabold text-red-600">
-                    Resumo do Nosso Date! 📝✨
-                </h2>
-
-                <!-- Bloco 1: Status das Respostas -->
-                <div class="bg-red-50 border border-red-200 p-5 rounded-2xl text-left text-sm space-y-3 shadow-sm text-gray-800">
-                    <p class="font-bold text-red-700 text-base border-b border-red-200 pb-2">
-                        Você respondeu:
-                    </p>
-                    <p id="resumo-presenca" class="font-medium"></p>
-                    <p id="resumo-beijo" class="font-medium"></p>
-                </div>
-
-                <!-- Bloco 2: Pauta do Encontro -->
-                <div class="bg-pink-50 border border-pink-200 p-5 rounded-2xl text-left text-sm space-y-3 shadow-sm text-gray-800">
-                    <p class="font-bold text-red-700 text-base border-b border-pink-200 pb-2">
-                        📚 Pauta do Encontro:
-                    </p>
-                    <ul class="space-y-2 text-gray-700">
-                        <li>📖 <strong>Literatura e Recomendações:</strong> Livros e clubes de hobbies.</li>
-                        <li>☕ <strong>Boas conversas:</strong> Nos conhecermos ao vivo sem pressa!</li>
-                    </ul>
-                </div>
-
-                <!-- Mensagem Final -->
-                <p class="text-red-600 font-extrabold text-lg py-1">
-                    Mal posso esperar por amanhã! 💖
-                </p>
-
-                <!-- Botões de Voltar, Refazer e Concluir -->
-                <div class="pt-2 flex gap-2">
-                    <button onclick="voltarParaPerguntaStep2()" class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-600 font-semibold py-3 px-2 rounded-xl transition-all text-xs flex items-center justify-center gap-1">
-                        ⬅️ Voltar
-                    </button>
-                    <button onclick="reiniciarFluxo()" class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-600 font-semibold py-3 px-2 rounded-xl transition-all text-xs flex items-center justify-center gap-1">
-                        🔄 Refazer
-                    </button>
-                    <button onclick="irParaFinalizacao('Sim')" class="flex-1 bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-2 rounded-xl shadow-lg transition-all text-xs flex items-center justify-center gap-1">
-                        ✅ Concluir
-                    </button>
-                </div>
-            </div>
-
+        <div class="bg-white p-3 rounded-2xl border border-pink-100 shadow-sm flex items-start gap-3">
+          <span class="text-xl">🍕</span>
+          <div>
+            <h3 class="text-xs font-bold text-romantic-red">2. Gastronomia</h3>
+            <p class="text-xs text-gray-600">Avaliação sincera da carbonara do Asttore Forneria.</p>
+          </div>
         </div>
 
-        <!-- ================= PÁGINA FINAL (NÃO - ATÉ MAIS) ================= -->
-        <div id="step-final-nao" class="space-y-6 hidden py-8 text-center">
-            <div class="text-6xl mb-2">👋</div>
-            <h2 class="text-3xl font-extrabold text-red-600">
-                Até mais!
-            </h2>
-            <p class="text-gray-600 text-sm font-medium">
-                Resposta enviada com sucesso. ✨
-            </p>
-            <div class="pt-4">
-                <button onclick="reiniciarFluxo()" class="bg-gray-100 hover:bg-gray-200 text-gray-600 font-semibold py-2.5 px-5 rounded-xl transition-all text-sm">
-                    🔄 Recomeçar
-                </button>
-            </div>
+        <div class="bg-white p-3 rounded-2xl border border-pink-100 shadow-sm flex items-start gap-3">
+          <span class="text-xl">✈️</span>
+          <div>
+            <h3 class="text-xs font-bold text-romantic-red">3. Viagens e Vantagens</h3>
+            <p class="text-xs text-gray-600">Destinos dos sonhos (e o segredo dos 80% de desconto na sua passagem por eu ser PCD kkkk).</p>
+          </div>
         </div>
 
-        <!-- ================= PÁGINA FINAL (SIM - ATÉ AMANHÃ) ================= -->
-        <div id="step-final-sim" class="space-y-6 hidden py-8 text-center">
-            <div class="text-6xl mb-2">💌</div>
-            <h2 class="text-3xl font-extrabold text-red-600">
-                Até amanhã!
-            </h2>
-            <p class="text-gray-600 text-sm">
-                As suas escolhas já foram registradas com sucesso. ✨
-            </p>
-            <div class="pt-4">
-                <button onclick="reiniciarFluxo()" class="bg-gray-100 hover:bg-gray-200 text-gray-600 font-semibold py-2.5 px-5 rounded-xl transition-all text-sm">
-                    🔄 Recomeçar
-                </button>
-            </div>
+        <div class="bg-white p-3 rounded-2xl border border-pink-100 shadow-sm flex items-start gap-3">
+          <span class="text-xl">☕</span>
+          <div>
+            <h3 class="text-xs font-bold text-romantic-red">4. Boas Conversas</h3>
+            <p class="text-xs text-gray-600">Planos, hobbies e boas risadas sem pressa.</p>
+          </div>
         </div>
+      </div>
 
-    </div>
+      <p class="font-serif text-lg font-bold text-romantic-accent">
+        Mal posso esperar! 💖
+      </p>
 
-    <script>
-        const SHEETDB_URL = "https://sheetdb.io/api/v1/9a6o7jdu4czl9";
+      <div class="grid grid-cols-2 gap-3 pt-1">
+        <button onclick="navegarPara('page-1')" class="w-full py-3 px-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-2xl transition-all text-xs sm:text-sm">
+          Mudar de ideia 🔄
+        </button>
+        <button onclick="concluirSim()" class="w-full py-3.5 px-3 bg-romantic-red hover:bg-romantic-deepRed text-white font-semibold rounded-2xl shadow-lg transition-all transform active:scale-95 text-xs sm:text-sm">
+          Concluir ✅
+        </button>
+      </div>
+    </section>
 
-        let respostaPresenca = "";
-        let respostaBeijo = "";
+    <!-- ==========================================
+         PÁGINA FINAL DE SUCESSO
+         ========================================== -->
+    <section id="page-success" class="page-step card-glass rounded-3xl p-6 sm:p-8 space-y-6 text-center border border-pink-200 hidden">
+      <div class="space-y-3">
+        <span class="text-6xl inline-block animate-bounce">💌</span>
+        <h2 class="text-3xl font-serif font-bold text-romantic-red">
+          Até amanhã!
+        </h2>
+        <p class="text-sm text-gray-600">
+          Sua resposta foi enviada com sucesso. ✨
+        </p>
+      </div>
 
-        function enviarParaGoogleSheets(tipo, resposta) {
-            const agora = new Date();
-            const dataHoraFormatada = agora.toLocaleString('pt-BR');
+      <button onclick="recomecar()" class="w-full py-3.5 px-4 bg-romantic-red hover:bg-romantic-deepRed text-white font-semibold rounded-2xl shadow-lg transition-all transform active:scale-95">
+        Recomeçar 🔄
+      </button>
+    </section>
 
-            const dados = {
-                data: [
-                    {
-                        DataHora: dataHoraFormatada,
-                        Resposta: tipo + ": " + resposta
-                    }
-                ]
-            };
+    <!-- ==========================================
+         PÁGINA FINAL DE RECUSA
+         ========================================== -->
+    <section id="page-refusal" class="page-step card-glass rounded-3xl p-6 sm:p-8 space-y-6 text-center border border-pink-200 hidden">
+      <div class="space-y-3">
+        <span class="text-6xl inline-block">👋</span>
+        <h2 class="text-3xl font-serif font-bold text-romantic-red">
+          Até mais!
+        </h2>
+        <p class="text-sm text-gray-600">
+          Resposta enviada com sucesso. ✨
+        </p>
+      </div>
 
-            fetch(SHEETDB_URL, {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(dados)
-            })
-            .then(response => response.json())
-            .then(data => console.log("Gravado no Sheets com sucesso:", data))
-            .catch(error => console.error("Erro ao gravar:", error));
+      <button onclick="recomecar()" class="w-full py-3.5 px-4 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold rounded-2xl transition-all transform active:scale-95">
+        Recomeçar 🔄
+      </button>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       JAVASCRIPT DA APLICAÇÃO
+       ========================================== -->
+  <script>
+    const SHEETDB_URL = 'https://sheetdb.io/api/v1/qqasbjz1axgf3';
+    let enderecoTemp = "N/A";
+
+    // --- GERADOR DE CORAÇÕES FLUTUANTES ---
+    function criarCoracoes() {
+      const container = document.getElementById('hearts-container');
+      const totalCoracoes = 15;
+      for (let i = 0; i < totalCoracoes; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('heart-bg');
+        heart.innerText = '❤️';
+        heart.style.left = `${Math.random() * 100}vw`;
+        heart.style.animationDuration = `${5 + Math.random() * 5}s`;
+        heart.style.animationDelay = `${Math.random() * 5}s`;
+        heart.style.fontSize = `${1 + Math.random() * 1.5}rem`;
+        container.appendChild(heart);
+      }
+    }
+
+    // --- NAVEGAÇÃO SPA (Transição entre Divs) ---
+    function navegarPara(idPagina) {
+      const paginas = ['page-1', 'page-1a', 'page-1b', 'page-3', 'page-success', 'page-refusal'];
+      paginas.forEach(p => {
+        const el = document.getElementById(p);
+        if (p === idPagina) {
+          el.classList.remove('hidden');
+        } else {
+          el.classList.add('hidden');
         }
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-        function responderStep1(resposta) {
-            respostaPresenca = resposta;
-            enviarParaGoogleSheets("Presença Date", resposta);
+    // --- FORMATAÇÃO DE DATA E HORA (PT-BR) ---
+    function obterDataHoraFormatada() {
+      const agora = new Date();
+      const dia = String(agora.getDate()).padStart(2, '0');
+      const mes = String(agora.getMonth() + 1).padStart(2, '0');
+      const ano = agora.getFullYear();
+      const horas = String(agora.getHours()).padStart(2, '0');
+      const minutos = String(agora.getMinutes()).padStart(2, '0');
+      const segundos = String(agora.getSeconds()).padStart(2, '0');
+      return `${dia}/${mes}/${ano} ${horas}:${minutos}:${segundos}`;
+    }
 
-            document.getElementById('conteudo-inicial-step1').classList.add('hidden');
+    // --- ENVIO API SHEETDB ---
+    async function enviarSheetDB(respostaText, enderecoText = "N/A") {
+      const dataPayload = {
+        data: [
+          {
+            DataHora: obterDataHoraFormatada(),
+            Resposta: respostaText,
+            Endereco: enderecoText,
+            "Endereço": enderecoText
+          }
+        ]
+      };
 
-            const containerMsg = document.getElementById('msg-resposta-step1');
-            const botoesSucesso = document.getElementById('botoes-sucesso-step1');
-            const resumoRecusa = document.getElementById('resumo-recusa-step1');
+      try {
+        await fetch(SHEETDB_URL, {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(dataPayload)
+        });
+      } catch (error) {
+        console.error('Erro ao enviar para o SheetDB:', error);
+      }
+    }
 
-            if (resposta === 'Sim') {
-                containerMsg.innerHTML = `
-                    <div class="bg-red-100 border border-red-300 text-red-800 p-6 rounded-2xl font-bold text-base leading-relaxed shadow-sm">
-                        Perfeito! Passo pra te pegar às 20 horas! ✨
-                    </div>
-                `;
-                botoesSucesso.classList.remove('hidden');
-                resumoRecusa.classList.add('hidden');
-            } else {
-                containerMsg.innerHTML = `
-                    <div class="bg-gray-100 border border-gray-300 text-gray-700 p-6 rounded-2xl font-bold text-base leading-relaxed shadow-sm">
-                        Respeito sua opinião, mas é uma opinião burra! 😅
-                    </div>
-                `;
-                botoesSucesso.classList.add('hidden');
-                resumoRecusa.classList.remove('hidden');
-            }
+    // --- LÓGICA DE AÇÕES ---
 
-            document.getElementById('resultado-step1').classList.remove('hidden');
-        }
+    // Ação do Botão Sim / Não na Página 1
+    function responderConvite(opcao) {
+      if (opcao === 'Sim') {
+        enviarSheetDB("Presença: Sim", "N/A");
+        navegarPara('page-1a');
+      } else {
+        enviarSheetDB("Presença: Não", "N/A");
+        navegarPara('page-1b');
+      }
+    }
 
-        function voltarParaStep1() {
-            document.getElementById('resultado-step1').classList.add('hidden');
-            document.getElementById('conteudo-inicial-step1').classList.remove('hidden');
-        }
+    // Validação e Envio do Endereço (Página 1A -> Página 3)
+    function salvarEnderecoEAvancar() {
+      const inputEl = document.getElementById('input-endereco');
+      const erroEl = document.getElementById('erro-endereco');
+      const valorEndereco = inputEl.value.trim();
 
-        function irParaStep2() {
-            document.getElementById('step-1').classList.add('hidden');
-            document.getElementById('step-2').classList.remove('hidden');
-        }
+      if (!valorEndereco) {
+        erroEl.classList.remove('hidden');
+        return;
+      }
 
-        function voltarParaStep1DoStep2() {
-            document.getElementById('step-2').classList.add('hidden');
-            document.getElementById('step-1').classList.remove('hidden');
-            voltarParaStep1();
-        }
+      erroEl.classList.add('hidden');
+      enderecoTemp = valorEndereco;
+      document.getElementById('resumo-endereco-texto').innerText = enderecoTemp;
 
-        function responderStep2(resposta) {
-            respostaBeijo = resposta;
-            enviarParaGoogleSheets("Beijo Prometido", resposta);
+      // Envia também o endereço na própria coluna de Resposta para garantir que o vês no Sheets
+      enviarSheetDB(`Endereço Informado: ${enderecoTemp}`, enderecoTemp);
+      navegarPara('page-3');
+    }
 
-            document.getElementById('pergunta-step2').classList.add('hidden');
+    // Conclusão Final do Não
+    function concluirNao() {
+      enviarSheetDB("Concluído: Date Recusado", "N/A");
+      navegarPara('page-refusal');
+    }
 
-            const containerMsg = document.getElementById('msg-resposta-step2');
-            if (resposta === 'Sim') {
-                containerMsg.innerHTML = `
-                    <div class="bg-red-100 border border-red-300 text-red-800 p-4 rounded-2xl font-bold text-sm leading-relaxed">
-                        💖 Pode deixar que eu vou cobrar esse beijo pessoalmente! 😉
-                    </div>
-                `;
-            } else {
-                containerMsg.innerHTML = `
-                    <div class="bg-gray-100 border border-gray-300 text-gray-700 p-4 rounded-2xl font-bold text-sm leading-relaxed">
-                        Tudo bem.. o importante é se conhecer! 😊
-                    </div>
-                `;
-            }
-            containerMsg.classList.remove('hidden');
+    // Conclusão Final do Sim
+    function concluirSim() {
+      enviarSheetDB(`Concluído: Date Aceito (Endereço: ${enderecoTemp})`, enderecoTemp);
+      navegarPara('page-success');
+    }
 
-            const txtPresenca = respostaPresenca === 'Sim' ? '✅ Confirmou presença (Encontro às 20h)' : '❌ Não confirmou presença';
-            const txtBeijo = respostaBeijo === 'Sim' ? '💋 Beijar (Vou cobrar o beijo!)' : '⏳ Prorrogar (Adiar o beijo)';
+    // Reiniciar Aplicação
+    function recomecar() {
+      document.getElementById('input-endereco').value = '';
+      document.getElementById('erro-endereco').classList.add('hidden');
+      enderecoTemp = "N/A";
+      navegarPara('page-1');
+    }
 
-            document.getElementById('resumo-presenca').innerText = txtPresenca;
-            document.getElementById('resumo-beijo').innerText = txtBeijo;
-
-            document.getElementById('resumo-final').classList.remove('hidden');
-        }
-
-        function voltarParaPerguntaStep2() {
-            document.getElementById('resumo-final').classList.add('hidden');
-            document.getElementById('msg-resposta-step2').classList.add('hidden');
-            document.getElementById('pergunta-step2').classList.remove('hidden');
-        }
-
-        function irParaFinalizacao(tipo) {
-            document.getElementById('step-1').classList.add('hidden');
-            document.getElementById('step-2').classList.add('hidden');
-            
-            if (tipo === 'Sim') {
-                document.getElementById('step-final-sim').classList.remove('hidden');
-            } else {
-                document.getElementById('step-final-nao').classList.remove('hidden');
-            }
-        }
-
-        function reiniciarFluxo() {
-            document.getElementById('step-final-sim').classList.add('hidden');
-            document.getElementById('step-final-nao').classList.add('hidden');
-            document.getElementById('step-2').classList.add('hidden');
-            document.getElementById('resumo-final').classList.add('hidden');
-            document.getElementById('msg-resposta-step2').classList.add('hidden');
-            document.getElementById('pergunta-step2').classList.remove('hidden');
-            document.getElementById('step-1').classList.remove('hidden');
-            voltarParaStep1();
-        }
-    </script>
+    // Inicialização ao Carregar
+    window.onload = () => {
+      criarCoracoes();
+    };
+  </script>
 </body>
 </html>
